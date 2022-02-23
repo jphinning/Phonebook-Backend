@@ -35,5 +35,21 @@ class ContactRepository {
             return contact;
         });
     }
+    updateContact(id, payload) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const contactRepo = (0, typeorm_1.getRepository)(ContactModel_1.ContactModel);
+            const contact = yield this.getContact(id);
+            if (!contact)
+                return null;
+            return contactRepo.save(Object.assign(Object.assign({}, contact), payload));
+        });
+    }
+    deleteContact(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const contactRepo = (0, typeorm_1.getRepository)(ContactModel_1.ContactModel);
+            const contact = yield contactRepo.delete(id);
+            return contact;
+        });
+    }
 }
 exports.ContactRepository = ContactRepository;

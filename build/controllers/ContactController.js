@@ -39,6 +39,16 @@ let ContactController = class ContactController {
             return new ContactRepository_1.ContactRepository().getContact(Number(id));
         });
     }
+    updateContact(id, body) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return new ContactRepository_1.ContactRepository().updateContact(Number(id), body);
+        });
+    }
+    deleteContact(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return new ContactRepository_1.ContactRepository().deleteContact(Number(id));
+        });
+    }
 };
 __decorate([
     (0, tsoa_1.Get)('/'),
@@ -60,6 +70,21 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], ContactController.prototype, "getContact", null);
+__decorate([
+    (0, tsoa_1.Put)('/:id'),
+    __param(0, (0, tsoa_1.Path)()),
+    __param(1, (0, tsoa_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", Promise)
+], ContactController.prototype, "updateContact", null);
+__decorate([
+    (0, tsoa_1.Delete)('/:id'),
+    __param(0, (0, tsoa_1.Path)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], ContactController.prototype, "deleteContact", null);
 ContactController = __decorate([
     (0, tsoa_1.Route)('contact'),
     (0, tsoa_1.Tags)('Contact')

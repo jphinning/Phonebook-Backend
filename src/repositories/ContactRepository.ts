@@ -50,6 +50,8 @@ export class ContactRepository {
     const contactRepo = getRepository(ContactModel);
     const contact = await contactRepo.delete(id);
 
+    if (!contact) return null;
+
     return contact;
   }
 

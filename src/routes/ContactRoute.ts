@@ -33,4 +33,33 @@ router.get('/:id', async (req, res) => {
 
 });
 
+router.put('/:id', async (req, res) => {
+
+  try {
+    const controller = new ContactController();
+    const response = await controller.updateContact(req.params.id, req.body);
+
+    if (!response) return res.status(404).send({ message: 'No user found' });
+
+    return res.send(response);
+
+  } catch {
+    res.status(400).send({ message: 'error' });
+  }
+});
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const controller = new ContactController();
+    const response = await controller.deleteContact(req.params.id);
+
+    if (!response) return res.status(404).send({ message: 'No user found' });
+
+    return res.send(response);
+
+  } catch (error) {
+    res.status(400).send({ message: 'error' });
+  }
+});
+
 export default router;
