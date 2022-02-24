@@ -37,4 +37,28 @@ router.get('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         res.status(400).send({ message: 'error' });
     }
 }));
+router.put('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const controller = new ContactController_1.default();
+        const response = yield controller.updateContact(req.params.id, req.body);
+        if (!response)
+            return res.status(404).send({ message: 'No user found' });
+        return res.send(response);
+    }
+    catch (_a) {
+        res.status(400).send({ message: 'error' });
+    }
+}));
+router.delete('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const controller = new ContactController_1.default();
+        const response = yield controller.deleteContact(req.params.id);
+        if (!response)
+            return res.status(404).send({ message: 'No user found' });
+        return res.send(response);
+    }
+    catch (error) {
+        res.status(400).send({ message: 'error' });
+    }
+}));
 exports.default = router;

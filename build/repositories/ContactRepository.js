@@ -48,6 +48,8 @@ class ContactRepository {
         return __awaiter(this, void 0, void 0, function* () {
             const contactRepo = (0, typeorm_1.getRepository)(ContactModel_1.ContactModel);
             const contact = yield contactRepo.delete(id);
+            if (!contact)
+                return null;
             return contact;
         });
     }
