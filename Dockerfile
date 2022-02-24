@@ -6,8 +6,6 @@ COPY --chown=node:node . .
 
 RUN npm ci --only=production
 
-RUN npm run build
-
 ENV NODE_ENV=production
 
 USER node
