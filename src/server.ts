@@ -1,5 +1,6 @@
 //Express
 import express, { Application } from "express";
+import cors from "cors";
 import morgan from "morgan";
 import Router from "./routes/index";
 import swaggerUI from "swagger-ui-express";
@@ -13,7 +14,8 @@ const PORT = process.env.PORT || 4000;
 
 const app: Application = express();
 
-app.use(express.json());
+app.use(express.json({limit:'50mb'}));
+app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.static("public"));
 
