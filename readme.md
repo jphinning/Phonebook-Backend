@@ -14,3 +14,5 @@ $ docker-compose up
 ```
 
 Now visit http://localhost:4000 to access Phonebook!
+
+![Alt Text](https://media.giphy.com/media/Q9v0ZBOeq8TTREBEKN/giphy.gif)
