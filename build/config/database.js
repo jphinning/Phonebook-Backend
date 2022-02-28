@@ -11,5 +11,8 @@ const config = {
     // database: process.env.POSTGRES_DB || 'phonebook',
     entities: [ContactModel_1.ContactModel],
     synchronize: true,
+    extra: {
+        ssl: true
+    }
 };
 exports.default = config;
