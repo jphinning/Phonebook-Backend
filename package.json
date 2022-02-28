@@ -1,8 +1,11 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "engines": {
+    "node": "17.x"
+  },
   "description": "",
-  "main": "index.js",
+  "main": "build/server.js",
   "scripts": {
     "start": "node build/server.js",
     "build": "tsc && cp ../frontend/dist/* ./public",
