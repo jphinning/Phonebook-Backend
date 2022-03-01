@@ -11,10 +11,7 @@ const config: ConnectionOptions = {
   database: process.env.POSTGRES_DB || 'phonebook',
   entities: [ContactModel],
   synchronize: true,
-  extra: {
-    ssl: true,
-    rejectUnauthorized: false
-  }
+  ssl: true
 };
 
 export default config;
