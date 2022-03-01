@@ -35,7 +35,7 @@ createConnection(dbConfig)
   .then((_connection) => {
     app.listen(PORT, () => {
       console.log(`Server running on PORT ${PORT}`);
-      console.log(process.env.POSTGRES_PORT)
+      console.log(process.env.PORT)
     });
   })
   .catch((err) => {
