@@ -11,6 +11,11 @@ const config = {
     database: process.env.POSTGRES_DB || 'phonebook',
     entities: [ContactModel_1.ContactModel],
     synchronize: true,
-    ssl: true
+    ssl: true,
+    extra: {
+        ssl: {
+            rejectUnauthorized: false,
+        },
+    }
 };
 exports.default = config;
