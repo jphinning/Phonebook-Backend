@@ -10,7 +10,7 @@ import "reflect-metadata";
 import { createConnection } from "typeorm";
 import dbConfig from "./config/database"
 
-const PORT = 80;
+const PORT = process.env.PORT || 4000;
 
 const app: Application = express();
 

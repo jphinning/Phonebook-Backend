@@ -13,7 +13,7 @@ const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 require("reflect-metadata");
 const typeorm_1 = require("typeorm");
 const database_1 = __importDefault(require("./config/database"));
-const PORT = 80;
+const PORT = process.env.PORT || 4000;
 const app = (0, express_1.default)();
 app.use(express_1.default.json({ limit: '50mb' }));
 app.use((0, cors_1.default)());
